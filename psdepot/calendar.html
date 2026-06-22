@@ -33,9 +33,55 @@
         
         .event { background: #003366; color: white; padding: 5px 8px; font-size: 12px; margin-bottom: 3px; border-radius: 3px; cursor: pointer; }
         .event:hover { background: #005599; }
-        .event.followup { background: #ff6600; }
-        .event.new { background: #28a745; }
-        .event.promo { background: #9c27b0; }
+        .event.holiday { background: #f44336; }
+        
+        .holiday-legend {
+            background: #f9f9f9;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eee;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+        .legend-followup { background: #ff6600; }
+        .legend-new { background: #28a745; }
+        .legend-promo { background: #9c27b0; }
+        .legend-holiday { background: #f44336; }
+        
+        .federal-holidays {
+            background: linear-gradient(135deg, #fff3e0, #ffccbc);
+            padding: 20px 30px;
+            margin: 20px 30px;
+            border-radius: 10px;
+            border-left: 4px solid #ff6600;
+        }
+        .federal-holidays h4 {
+            color: #003366;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .federal-holidays ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #666;
+        }
+        .federal-holidays li {
+            margin: 5px 0;
+        }
         
         .event-list { margin-top: 30px; }
         .event-list h3 { color: #003366; border-bottom: 2px solid #ff6600; padding-bottom: 10px; }
@@ -85,6 +131,13 @@
             <button onclick="nextMonth()">Next &#8594;</button>
         </div>
         
+        <div class="holiday-legend">
+            <div class="legend-item"><div class="legend-dot legend-followup"></div> Follow-up</div>
+            <div class="legend-item"><div class="legend-dot legend-new"></div> New Customer</div>
+            <div class="legend-item"><div class="legend-dot legend-promo"></div> Promotion</div>
+            <div class="legend-item"><div class="legend-dot legend-holiday"></div> Federal Holiday</div>
+        </div>
+        
         <div class="calendar">
             <h2 class="month-title" id="monthTitle"></h2>
             
@@ -102,6 +155,25 @@
         </div>
         
         <div class="event-list">
+            <h3>2026 Federal Holidays</h3>
+            <div class="federal-holidays">
+                <h4>🇺🇸 US Federal Holidays</h4>
+                <ul>
+                    <li><strong>Jan 1</strong> - New Year's Day</li>
+                    <li><strong>Jan 19</strong> - Martin Luther King Jr. Day</li>
+                    <li><strong>Feb 16</strong> - Presidents' Day</li>
+                    <li><strong>May 25</strong> - Memorial Day</li>
+                    <li><strong>Jun 19</strong> - Juneteenth</li>
+                    <li><strong>Jul 3</strong> - Independence Day (Observed)</li>
+                    <li><strong>Sep 7</strong> - Labor Day</li>
+                    <li><strong>Oct 12</strong> - Columbus Day / Indigenous Peoples' Day</li>
+                    <li><strong>Nov 11</strong> - Veterans Day</li>
+                    <li><strong>Nov 26</strong> - Thanksgiving Day</li>
+                    <li><strong>Nov 27</strong> - Day After Thanksgiving</li>
+                    <li><strong>Dec 25</strong> - Christmas Day</li>
+                </ul>
+            </div>
+            
             <h3>Upcoming Outreach Events</h3>
             <div id="eventList"></div>
         </div>
@@ -143,15 +215,29 @@
             { date: '3rd-tue', type: 'followup', title: 'Follow-up Tuesday', desc: 'Contact customers with pending orders' },
             { date: '4th-wed', type: 'promo', title: 'Mid-Month Promo', desc: 'Send special offers to inactive customers' },
             
+            // US Federal Holidays 2026
+            { date: '2026-01-01', type: 'holiday', title: "New Year's Day", desc: 'Federal Holiday - Office Closed' },
+            { date: '2026-01-19', type: 'holiday', title: 'MLK Day', desc: "Martin Luther King Jr. Day - 3rd Monday of January" },
+            { date: '2026-02-16', type: 'holiday', title: "Presidents' Day", desc: "Washington's Birthday - 3rd Monday of February" },
+            { date: '2026-05-25', type: 'holiday', title: 'Memorial Day', desc: 'Last Monday of May' },
+            { date: '2026-06-19', type: 'holiday', title: 'Juneteenth', desc: 'Juneteenth National Independence Day' },
+            { date: '2026-07-03', type: 'holiday', title: 'Independence Day (Observed)', desc: 'Friday before July 4th' },
+            { date: '2026-09-07', type: 'holiday', title: 'Labor Day', desc: 'First Monday of September' },
+            { date: '2026-10-12', type: 'holiday', title: 'Columbus Day', desc: "Indigenous Peoples' Day - 2nd Monday of October" },
+            { date: '2026-11-11', type: 'holiday', title: 'Veterans Day', desc: 'Veterans Day' },
+            { date: '2026-11-26', type: 'holiday', title: 'Thanksgiving', desc: '4th Thursday of November' },
+            { date: '2026-11-27', type: 'holiday', title: 'Day After Thanksgiving', desc: 'Black Friday Shopping Day' },
+            { date: '2026-12-25', type: 'holiday', title: 'Christmas Day', desc: 'Federal Holiday' },
+            { date: '2026-12-31', type: 'holiday', title: "New Year's Eve", desc: 'End of Year Planning Day' },
+            
             // Quarterly
             { date: '2026-07-01', type: 'promo', title: 'Q3 Kickoff', desc: 'Quarterly promotion launch' },
             { date: '2026-10-01', type: 'promo', title: 'Q4 Kickoff', desc: 'Holiday season promotion' },
             
-            // Industry events
-            { date: '2026-07-04', type: 'holiday', title: 'Independence Day', desc: 'Holiday - limited operations' },
-            { date: '2026-09-07', type: 'holiday', title: 'Labor Day', desc: 'Holiday - limited operations' },
-            { date: '2026-11-26', type: 'holiday', title: 'Thanksgiving', desc: 'Holiday - limited operations' },
-            { date: '2026-12-25', type: 'holiday', title: 'Christmas', desc: 'Holiday - limited operations' },
+            // Holiday Shopping Campaigns
+            { date: '2026-11-01', type: 'promo', title: 'Black Friday Prep', desc: 'Prepare holiday promotions' },
+            { date: '2026-12-01', type: 'promo', title: 'Holiday Sale Kickoff', desc: 'December promotion campaign' },
+            { date: '2026-12-15', type: 'promo', title: 'Last Minute Deals', desc: 'Last chance holiday offers' },
             
             // Contact campaigns
             { date: '2026-07-15', type: 'followup', title: 'Mid-Year Check-in', desc: 'Reach out to all customers for reviews' },
