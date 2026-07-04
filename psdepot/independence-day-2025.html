@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy 4th of July from Performance Supply Depot! Premium POS supplies for American businesses.">
+    <meta property="og:title" content="Happy 4th of July | Performance Supply Depot">
+    <meta property="og:description" content="Land of the Tree, Home of the Trade. Premium supplies for American businesses.">
+    <meta property="og:image" content="https://psdepot.com/static/july4th-og.jpg">
+    <meta property="og:url" content="https://psdepot.com/independence-day-2025">
+    <title>Happy July 4th 2025 | Performance Supply Depot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a1628;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #1e3a5f 0%, #0a1628 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 100px rgba(0,212,255,0.2);
+        }
+        
+        /* Animated Fireworks */
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: explode 2.5s ease-out infinite;
+        }
+        
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .fw1 { top: 12%; left: 10%; animation-delay: 0s; }
+        .fw2 { top: 18%; left: 75%; animation-delay: 0.6s; }
+        .fw3 { top: 8%; left: 45%; animation-delay: 1.2s; }
+        .fw4 { top: 22%; left: 85%; animation-delay: 0.3s; }
+        .fw5 { top: 15%; left: 30%; animation-delay: 0.9s; }
+        .fw6 { top: 10%; left: 60%; animation-delay: 1.5s; }
+        
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        /* Header */
+        .header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 50px 20px 35px;
+        }
+        
+        .flag-stripes {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            gap: 4px;
+        }
+        
+        .flag-stripe {
+            width: 50px;
+            height: 5px;
+            border-radius: 2px;
+        }
+        .flag-stripe.red { background: #c53030; }
+        .flag-stripe.white { background: white; }
+        .flag-stripe.blue { background: #1e3a5f; }
+        
+        .greeting {
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .title {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            text-shadow: 
+                3px 3px 0 #c53030,
+                6px 6px 0 #1e3a5f,
+                0 0 40px rgba(0,212,255,0.5);
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            font-style: italic;
+            color: #ffd700;
+            text-shadow: 0 0 25px rgba(255,215,0,0.4);
+            font-weight: 600;
+        }
+        
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 35px 25px;
+        }
+        
+        .brand-box {
+            background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
+            border: 3px solid #ffd700;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 0 40px rgba(255,215,0,0.25), inset 0 0 60px rgba(0,0,0,0.2);
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .brand-tagline {
+            font-size: 14px;
+            color: #ffd700;
+            font-style: italic;
+        }
+        
+        .message {
+            color: #e2e8f0;
+            font-size: 17px;
+            line-height: 1.9;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .message strong {
+            color: #00d4ff;
+            font-weight: 600;
+        }
+        
+        /* Products */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+        
+        .product-card {
+            background: rgba(30,58,95,0.7);
+            border: 2px solid rgba(0,212,255,0.3);
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,212,255,0.3);
+            border-color: #00d4ff;
+        }
+        
+        .product-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .product-name {
+            font-size: 12px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cta-title {
+            font-size: 22px;
+            color: #0a1628;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        
+        .cta-text {
+            font-size: 15px;
+            color: #0a1628;
+            line-height: 1.8;
+        }
+        
+        .cta-text strong {
+            color: #c53030;
+            font-weight: 700;
+        }
+        
+        /* Phone Banner */
+        .phone-section {
+            background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
+            padding: 25px;
+            text-align: center;
+            border-top: 4px solid #ffd700;
+            border-bottom: 4px solid #ffd700;
+        }
+        
+        .phone-label {
+            font-size: 13px;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .phone-number {
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+            text-shadow: 
+                0 0 10px #ffd700,
+                0 0 20px #ffd700,
+                0 0 40px #ff6b6b,
+                2px 2px 0 #0a1628;
+            letter-spacing: 3px;
+            animation: patriotic-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes patriotic-glow {
+            0%, 100% {
+                text-shadow: 
+                    0 0 10px #ffd700,
+                    0 0 20px #ffd700,
+                    0 0 30px #ff6b6b;
+            }
+            33% {
+                text-shadow: 
+                    0 0 15px white,
+                    0 0 30px #00d4ff,
+                    0 0 45px #ffd700;
+            }
+            66% {
+                text-shadow: 
+                    0 0 20px #ff6b6b,
+                    0 0 40px white,
+                    0 0 60px #c53030;
+            }
+        }
+        
+        .phone-firework {
+            display: inline-block;
+            margin: 0 15px;
+            animation: bounce 1s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        /* Footer */
+        .footer {
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(180deg, rgba(10,22,40,0.98) 0%, #0a1628 100%);
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .footer-stripes {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .footer-stripe {
+            width: 40px;
+            height: 10px;
+        }
+        
+        .company-title {
+            font-size: 22px;
+            color: white;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        
+        .website-link {
+            color: #00d4ff;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        
+        .website-link:hover {
+            color: #ffd700;
+        }
+        
+        .contact-info {
+            color: #a0aec0;
+            font-size: 14px;
+            line-height: 2;
+        }
+        
+        .tagline-end {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #718096;
+            font-style: italic;
+        }
+        
+        .flag-divider {
+            height: 24px;
+            background: repeating-linear-gradient(
+                0deg,
+                #c53030 0px,
+                #c53030 12px,
+                white 12px,
+                white 24px,
+                #1e3a5f 24px,
+                #1e3a5f 36px
+            );
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .title {
+                font-size: 36px;
+            }
+            .subtitle {
+                font-size: 18px;
+            }
+            .phone-number {
+                font-size: 28px;
+            }
+            .products {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .product-card {
+                padding: 25px;
+            }
+        }
+        
+        /* Share Buttons */
+        .share-section {
+            text-align: center;
+            padding: 25px;
+            background: rgba(30,58,95,0.5);
+        }
+        
+        .share-title {
+            font-size: 14px;
+            color: #a0aec0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .share-facebook {
+            background: #1877f2;
+            color: white;
+        }
+        .share-facebook:hover {
+            background: #166fe5;
+            transform: translateY(-2px);
+        }
+        
+        .share-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        .share-twitter:hover {
+            background: #0d8bd9;
+            transform: translateY(-2px);
+        }
+        
+        .share-linkedin {
+            background: #0a66c2;
+            color: white;
+        }
+        .share-linkedin:hover {
+            background: #084ca1;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Fireworks Animation -->
+        <div class="fireworks">
+            <div class="firework fw1" style="box-shadow: 0 0 0 2px #ff0, 0 -30px 0 2px #f00, 0 -60px 0 2px #00f, 30px 0 0 2px #f0f, -30px 0 0 2px #0ff;"></div>
+            <div class="firework fw2" style="box-shadow: 0 0 0 2px #ff0, 0 -40px 0 2px #f00, 0 -80px 0 2px #00f, 40px 0 0 2px #0f0, -40px 0 0 2px #f0f;"></div>
+            <div class="firework fw3" style="box-shadow: 0 0 0 2px #ffd700, 0 -35px 0 2px #ff6b6b, 0 -70px 0 2px #00d4ff, 35px 0 0 2px #c53030, -35px 0 0 2px white;"></div>
+            <div class="firework fw4" style="box-shadow: 0 0 0 2px #ff0, 0 -25px 0 2px #f00, 0 -50px 0 2px #00f, 25px 0 0 2px #0ff, -25px 0 0 2px #f0f;"></div>
+            <div class="firework fw5" style="box-shadow: 0 0 0 2px #ffd700, 0 -45px 0 2px white, 0 -90px 0 2px #00d4ff, 45px 0 0 2px #c53030, -45px 0 0 2px #ff6b6b;"></div>
+            <div class="firework fw6" style="box-shadow: 0 0 0 2px #ff0, 0 -35px 0 2px #00f, 0 -70px 0 2px #f00, 35px 0 0 2px #0f0, -35px 0 0 2px #f0f;"></div>
+            
+            <!-- Sparkles -->
+            <div class="sparkle" style="top: 5%; left: 15%;"></div>
+            <div class="sparkle" style="top: 12%; left: 35%; animation-delay: 0.3s;"></div>
+            <div class="sparkle" style="top: 8%; left: 55%; animation-delay: 0.6s;"></div>
+            <div class="sparkle" style="top: 15%; left: 75%; animation-delay: 0.9s;"></div>
+            <div class="sparkle" style="top: 20%; left: 25%; animation-delay: 1.2s;"></div>
+        </div>
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="flag-stripes">
+                <div class="flag-stripe red"></div>
+                <div class="flag-stripe white"></div>
+                <div class="flag-stripe blue"></div>
+            </div>
+            
+            <div class="greeting">Happy Independence Day</div>
+            <div class="title">🇺🇸 4TH OF JULY 🇺🇸</div>
+            <div class="subtitle">Land of the Tree, Home of the Trade</div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <div class="brand-box">
+                <div class="brand-name">🏛️ Performance Supply Depot 🏛️</div>
+                <div class="brand-tagline">"Where American Businesses Trade with Pride"</div>
+            </div>
+            
+            <p class="message">
+                As we celebrate <strong>Freedom, Enterprise & Innovation</strong>, 
+                we at <strong>Performance Supply Depot</strong> remain committed to 
+                powering American businesses with <strong>premium supplies</strong> 
+                and <strong>reliable service</strong>.
+                <br><br>
+                From thermal rolls to toners, we've got your business covered 
+                — because a well-supplied business is a <strong>thriving</strong> business.
+            </p>
+            
+            <div class="products">
+                <a href="https://psdepot.com/products/thermal-rolls" class="product-card">
+                    <span class="product-icon">🖨️</span>
+                    <span class="product-name">Thermal Rolls</span>
+                </a>
+                <a href="https://psdepot.com/products/paper" class="product-card">
+                    <span class="product-icon">📦</span>
+                    <span class="product-name">Paper Supply</span>
+                </a>
+                <a href="https://psdepot.com/products/toners" class="product-card">
+                    <span class="product-icon">🖊️</span>
+                    <span class="product-name">Toners & Ink</span>
+                </a>
+            </div>
+            
+            <div class="cta-section">
+                <div class="cta-title">Ready to Partner with Excellence?</div>
+                <div class="cta-text">
+                    <strong>Visit us today:</strong><br>
+                    🌐 psdepot.com<br>
+                    📧 info@psdepot.com
+                </div>
+            </div>
+            
+            <div class="flag-divider"></div>
+        </div>
+        
+        <!-- Phone Section -->
+        <div class="phone-section">
+            <div class="phone-label">📞 Call Us Today 📞</div>
+            <div class="phone-number">
+                <span class="phone-firework">🎆</span>
+                888-881-6834
+                <span class="phone-firework">🎇</span>
+            </div>
+        </div>
+        
+        <!-- Share Section -->
+        <div class="share-section">
+            <div class="share-title">Share This Page</div>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://psdepot.com/independence-day-2025" target="_blank" class="share-btn share-facebook">
+                    📘 Share on Facebook
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Happy%204th%20of%20July%20from%20Performance%20Supply%20Depot!%20Land%20of%20the%20Tree%2C%20Home%20of%20the%20Trade%20🇺🇸&url=https://psdepot.com/independence-day-2025" target="_blank" class="share-btn share-twitter">
+                    🐦 Share on X
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://psdepot.com/independence-day-2025" target="_blank" class="share-btn share-linkedin">
+                    💼 Share on LinkedIn
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-stripes">
+                <div class="footer-stripe" style="background: #c53030;"></div>
+                <div class="footer-stripe" style="background: white;"></div>
+                <div class="footer-stripe" style="background: #1e3a5f;"></div>
+            </div>
+            
+            <div class="company-title">🏛️ Performance Supply Depot LLC</div>
+            <a href="https://psdepot.com" class="website-link">🌐 psdepot.com</a>
+            
+            <div class="contact-info">
+                📧 info@psdepot.com<br>
+                Empowering American Businesses Since Day One
+            </div>
+            
+            <div class="tagline-end">
+                Celebrate responsibly. Happy holidays from Performance Supply Depot!<br>
+                Land of the Tree, Home of the Trade 🇺🇸
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add interactive sparkle effect on click
+        document.addEventListener('click', function(e) {
+            const sparkle = document.createElement('div');
+            sparkle.style.cssText = `
+                position: fixed;
+                width: 10px;
+                height: 10px;
+                background: radial-gradient(circle, #ffd700 0%, transparent 70%);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                left: ${e.clientX - 5}px;
+                top: ${e.clientY - 5}px;
+                animation: click-sparkle 0.6s ease-out forwards;
+            `;
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 600);
+        });
+        
+        // Add sparkle animation dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes click-sparkle {
+                0% { transform: scale(0); opacity: 1; }
+                100% { transform: scale(3); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
